@@ -2,7 +2,7 @@ import socket
 import threading 
 
 
-nickname = input("Choose a nickname: ")
+nickname = input("Username: ")
 
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -24,7 +24,8 @@ def receive():
 
 def write():
     while True: 
-        message = f'{nickname}: {input("")}'
+        
+        message = f'{nickname}: {input(">")}'
 
         client.send(message.encode('ascii'))
 
